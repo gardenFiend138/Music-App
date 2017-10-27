@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>** MusicApp **</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= javascript_include_tag 'application' %>
+  </head>
+  <!-- fix logic for displaying logout button -->
+  <header>
+    Music App
+    <% if current_user  %>
+    <%= link_to "logout", {:controller=> "sessions", :action=> "destroy"}, :method => :delete%>
+    <% end %>
+  </header>
+
+  <body>
+    <%= yield %>
+  </body>
+</html>

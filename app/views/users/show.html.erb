@@ -1,0 +1,15 @@
+<form action="user_url" method="GET">
+  <input type="hidden" name="authenticity_token" value="form_authenticity_token">
+  <h1>Your email is:</h1>
+
+  <ul>
+    <% if flash[:errors] %>
+    <% flash[:errors].each do |error|  %>
+    <li><%= error %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <h3><%= @new_user.email %></h3>
+  
+</form>

@@ -1,0 +1,27 @@
+<form action="<%= users_url%>" method="POST">
+  <input type="hidden" name="authenticity_token" value="<%= form_authenticity_token %>">
+  <h1>Sign up</h1>
+  <ul>
+    <% if flash[:errors] %>
+    <% flash[:errors].each do |error|  %>
+    <li><%= error %></li>
+      <% end %>
+    <% end %>
+  </ul>
+
+  <label> Email: <input type="text" name="user[email]"> </label>
+  <br><br>
+  <label>Password: <input type="text" name="user[password]"></label>
+  <br><br>
+  <button type="submit" name="submit">Sign-Up!</button>
+
+
+</form>
+
+<!-- <h1>Sing up page</h1>
+<h3>Create an account here!</h3>
+<form action="new_user_url" method="GET">
+  <label for="email">Email:
+  <input type="text" name="email" value="user_email">
+  </label>
+</form> -->
