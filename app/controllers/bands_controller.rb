@@ -10,7 +10,7 @@ class BandsController < ApplicationController
       @band.user_id = @current_user.id
       redirect_to band_url(@band)
     else
-      flash.now[:errors] = @cat.errors.full_messages
+      flash.now[:errors] = @band.errors.full_messages
       render :new
     end
   end
@@ -36,7 +36,8 @@ class BandsController < ApplicationController
   def destroy
   end
 
-  private 
+  private
   def band_params
     params.require(:band).permit(:name)
+  end
 end
